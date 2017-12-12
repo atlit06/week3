@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ### test-api.js
 Trace the call
 ### user.api.js
@@ -11,3 +12,6 @@ weak race condition and no race condition
 ### tictactoe.loadtest.js
 Assignment: Find appropriate numbers to configure the load test so it passes on your buildserver
 under normal load.
+=======
+..
+>>>>>>> 9e8fe2c861127050e344334b14a890ae2c5b57ca
