@@ -42,6 +42,7 @@ module.exports=function(injected){
             cleanDatabase:()=>{
                 let cmdId = commandId++;
                 routingContext.commandRouter.routeMessage({commandId:cmdId, type:"cleanDatabase"});
+                console.log("heyyy");
                 return me;
 
             },
