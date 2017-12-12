@@ -37,8 +37,10 @@ function playGame(done) {
 
 
                      Run load tests again. They should fail. Explain why they fail.
+                     The correct codesnippet:
+                     userB.expectGameJoined().expectMoveMade('X').joinGame(userA.getGame().gameId).then(function ()
          */
-        userB.expectGameJoined().expectMoveMade('X').joinGame(userA.getGame().gameId).then(function () {
+        userB.joinGame(userA.getGame().gameId).expectMoveMade('X').expectGameJoined().then(function () {
             userB.expectMoveMade('O').expectMoveMade('X').placeMove(1, 0).then(() => {
                 userB.expectMoveMade('O').expectMoveMade('X').expectGameWon().placeMove(0, 2).then(() => {
                     userB.disconnect();
@@ -48,7 +50,7 @@ function playGame(done) {
         })
     }
 
-    userA.expectGameCreated().createGame().then(() => {
+    userA.createGame().expectGameCreated().then(() => {
         playOSide();
         userA.expectGameJoined().then(() => {
             userA.expectMoveMade('X').expectMoveMade('O').placeMove(0, 0).then(() => {   //  A
