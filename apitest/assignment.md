@@ -18,4 +18,4 @@ This did not change anything for me, all test ran fine after i rearranged the co
 #### Assignment: Find appropriate numbers to configure the load test so it passes on your buildserver under normal load.
 
 ### chat.spec.js optional?
-weak race condition and no race condition
+weak race condition and no race condition...
