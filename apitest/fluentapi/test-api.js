@@ -42,7 +42,7 @@ module.exports=function(injected){
             cleanDatabase:()=>{
                 let cmdId = commandId++;
                 routingContext.commandRouter.routeMessage({commandId:cmdId, type:"cleanDatabase"});
-                console.log("heyyy");
+                console.log("1");
                 return me;
 
             },
@@ -52,11 +52,13 @@ module.exports=function(injected){
                     waitingFor.pop(); // expectDatabaseCleaned
                     whenClean && whenClean();
                 });
+                console.log("2");
                 return me;
 
             },
             then:(whenDoneWaiting)=>{
                 function waitLonger(){
+                  console.log("3");
                     if(waitingFor.length>0){
                         setTimeout(waitLonger, 0);
                         return;
@@ -67,6 +69,7 @@ module.exports=function(injected){
                 return me;
             },
             disconnect:function(){
+              console.log("4");
                 routingContext.socket.disconnect();
             }
 
