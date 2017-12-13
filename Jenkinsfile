@@ -1,4 +1,4 @@
-node {    
+node {
     checkout scm
     stage('Clean') {
         // Clean files from last build.
@@ -14,6 +14,8 @@ node {
     }
     stage('Test') {
         sh 'npm run test:nowatch'
+        sh 'yarn add jasmine-reporters'
+        junit '**/TestReports/*.xml'
     }
     stage('Deploy') {
         sh './dockerbuild.sh'
