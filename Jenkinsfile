@@ -22,7 +22,7 @@ node {
         }
         sh 'yarn add jasmine-reporters'
 
-        sh 'npm run startserver:tests & npm run apitest:nowatch && npm run loadtest:nowatch $$ sleep 10 $$ kill $!'
+        sh 'npm run startserver:tests & npm run apitest:nowatch && npm run loadtest:nowatch && sleep 10 && kill $!'
 
         junit '**/TestReports/*.xml'
     }
