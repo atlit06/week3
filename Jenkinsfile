@@ -15,6 +15,11 @@ node {
     stage('Test') {
         sh 'npm run startpostgres && sleep 10 && npm run migratedb:dev'
         sh 'npm run test:nowatch'
+
+        dir('client')
+        {
+            sh 'npm run test:nowatch'
+        }
         sh 'yarn add jasmine-reporters'
 
         sh 'npm run startserver:tests & npm run apitest:nowatch && npm run loadtest:nowatch $$ sleep 10 $$ kill $!'
