@@ -9,6 +9,7 @@
 }
 
 .ticcell{
+    position: relative;
     display: inline-block;
     width: 60px;
     height: 60px;
@@ -20,6 +21,16 @@
 
 .ticcell:hover{
     background-color: rgba(63, 251, 84, 0.38);
+}
+
+.ticcell-item {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 10px);
+  text-align: center;
 }
 
 .myturn{
