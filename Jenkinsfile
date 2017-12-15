@@ -13,8 +13,12 @@ node {
         }
     }
     stage('Test') {
+        sh 'npm run startpostgres && sleep 10 && npm run migratedb'
         sh 'npm run test:nowatch'
         sh 'yarn add jasmine-reporters'
+
+        sh 'npm run startserver:tests & npm run apitest:nowatch && npm run loadtest:nowatch $$ sleep 10 $$ kill $!'
+
         junit '**/TestReports/*.xml'
     }
     stage('Deploy') {

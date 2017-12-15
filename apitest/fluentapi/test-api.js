@@ -57,8 +57,8 @@ module.exports=function(injected){
 
             },
             then:(whenDoneWaiting)=>{
+                console.log("3");
                 function waitLonger(){
-                  console.log("3");
                     if(waitingFor.length>0){
                         setTimeout(waitLonger, 0);
                         return;
