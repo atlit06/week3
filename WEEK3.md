@@ -19,8 +19,8 @@ List of things you finished / did not finish (with comments):
 * My test reports are published in Jenkins
   * This Works
 * My Tic Tac Toe game works, two people can play a game till the end and be notified who won.
-  * TODO: If something is not working, list it.
+  * TODO: Tell who won.
 * My TicCell is tested
-  * TODO: If something is not working, list it.
+  * TODO: Very few tests.
 * I've set up Datadog
   * This Works
